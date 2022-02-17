@@ -24,7 +24,7 @@ namespace SalesWebApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
         {
-            return await _context.Orders.ToListAsync();
+            return await _context.Orders.Include(x => x.Customer).ToListAsync();
         }
 
         // GET: api/Orders/5
