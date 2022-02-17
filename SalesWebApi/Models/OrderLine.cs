@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace SalesWebApi.Models {
@@ -14,6 +15,7 @@ namespace SalesWebApi.Models {
         [Column(TypeName = "decimal(7,2)")]
         public decimal Price { get; set; }
         public int OrderId { get; set; }
+        [JsonIgnore]
         public virtual Order order { get; set; }
 
         public OrderLine() {

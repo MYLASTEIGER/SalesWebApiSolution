@@ -18,6 +18,7 @@ namespace SalesWebApi.Models {
         [Required]
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
+        public virtual IEnumerable<OrderLine> Orderlines { get; set; }
 
         public Order() {
 
